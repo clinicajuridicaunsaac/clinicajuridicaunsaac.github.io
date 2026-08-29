@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Jurídica Cusco - UNSAAC</title>
+    <!-- Framework Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        /* Paleta de colores basada en el logo */
+        :root {
+            --color-granate: #4a0b12; /* Fondo del logo */
+            --color-dorado: #d4af37;  /* Letras e ícono del logo */
+            --color-dorado-oscuro: #b58f27;
+        }
+
+        .bg-granate { background-color: var(--color-granate) !important; }
+        .text-dorado { color: var(--color-dorado) !important; }
+        
+        .navbar-custom { background-color: var(--color-granate); }
+        .navbar-custom .navbar-brand, .navbar-custom .nav-link { color: white !important; }
+        .navbar-custom .nav-link:hover { color: var(--color-dorado) !important; }
+
+        .hero-section {
+            background: linear-gradient(135deg, #2a0509 0%, #5c0f18 100%);
+            color: white;
+            padding: 90px 0;
+            text-align: center;
+            border-bottom: 4px solid var(--color-dorado);
+        }
+
+        .btn-dorado { 
+            background-color: var(--color-dorado); 
+            color: #2a0509; 
+            font-weight: bold; 
+            border: none; 
+        }
+        .btn-dorado:hover { 
+            background-color: var(--color-dorado-oscuro); 
+            color: white; 
+        }
+
+        .section-title { 
+            color: var(--color-granate); 
+            font-weight: bold; 
+            margin-bottom: 30px; 
+            text-transform: uppercase;
+        }
+        
+        .border-dorado { border-color: var(--color-dorado) !important; }
+    </style>
+</head>
+<body>
+
+    <!-- Menú de Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-custom sticky-top shadow">
+        <div class="container">
+            <!-- Aquí puedes reemplazar el texto por una etiqueta <img> con tu logo real más adelante -->
+            <a class="navbar-brand fw-bold text-dorado" href="#">
+                <i class="bi bi-bank2 me-2"></i>CJC UNSAAC
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#directiva">Directiva</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#eventos">Eventos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Aula Virtual</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección Principal -->
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="display-4 fw-bold text-dorado mb-3">Clínica Jurídica Cusco</h1>
+            <p class="lead mb-4">Integrando la educación tradicional con la práctica clínica. Asesoramos casos de interés público y defendemos los derechos de nuestra comunidad.</p>
+            <a href="#eventos" class="btn btn-dorado btn-lg px-4 me-2 shadow">Campañas Activas</a>
+            <a href="#" class="btn btn-outline-light btn-lg px-4">Biblioteca Virtual</a>
+        </div>
+    </section>
+
+    <!-- Historia y Ejes -->
+    <section id="nosotros" class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="section-title">Nuestra Misión</h2>
+                    <p class="text-muted text-justify">Constituida el 03 de Mayo del 2000, la Clínica Jurídica de la Escuela Profesional de Derecho (UNSAAC) surge para transformar el método de enseñanza. Promovemos una educación enfocada a la garantía efectiva de los derechos y la atención a grupos sociales vulnerables.</p>
+                </div>
+                <div class="col-lg-6 mt-4 mt-lg-0">
+                    <div class="p-4 rounded shadow-sm bg-light border-start border-4 border-dorado">
+                        <h4 class="fw-bold mb-3" style="color: var(--color-granate);">Ejes Fundamentales</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-3"><i class="bi bi-check-circle-fill text-dorado me-2"></i> <strong>Formación:</strong> Diseño de procesos de capacitación internos y externos.</li>
+                            <li class="mb-3"><i class="bi bi-check-circle-fill text-dorado me-2"></i> <strong>Investigación:</strong> Documentación e incidencia en problemas prácticos regionales.</li>
+                            <li><i class="bi bi-check-circle-fill text-dorado me-2"></i> <strong>Litigio Estratégico:</strong> Promoción y garantía de los Derechos Humanos.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nueva Sección: Directiva y Círculos -->
+    <section id="directiva" class="py-5 bg-light border-top">
+        <div class="container">
+            <h2 class="section-title text-center">Organización y Círculos de Estudio</h2>
+            <p class="text-center text-muted mb-5">Conoce a los líderes y miembros que dirigen nuestras iniciativas académicas.</p>
+            <div class="row justify-content-center">
+                
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 border-0 shadow-sm text-center p-4">
+                        <div class="rounded-circle bg-granate text-white d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 80px; height: 80px; font-size: 2rem;">
+                            <i class="bi bi-person-fill"></i>
+                        </div>
+                        <h5 class="fw-bold" style="color: var(--color-granate);">[Tu Nombre/Presidente]</h5>
+                        <p class="text-muted mb-0">Presidencia - Clínica Jurídica</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 border-0 shadow-sm text-center p-4">
+                        <div class="rounded-circle bg-granate text-white d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 80px; height: 80px; font-size: 2rem;">
+                            <i class="bi bi-person-fill"></i>
+                        </div>
+                        <h5 class="fw-bold" style="color: var(--color-granate);">Tiffany [Apellido]</h5>
+                        <p class="text-muted mb-0">Presidencia - Círculo de Estudios</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 border-0 shadow-sm text-center p-4">
+                        <div class="rounded-circle bg-granate text-white d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 80px; height: 80px; font-size: 2rem;">
+                            <i class="bi bi-person-fill"></i>
+                        </div>
+                        <h5 class="fw-bold" style="color: var(--color-granate);">[Nombre de Miembro]</h5>
+                        <p class="text-muted mb-0">Coordinación de Proyección Social</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Eventos -->
+    <section id="eventos" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">Actividades Recientes</h2>
+            <div class="row mt-4">
+                
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100 shadow-sm border-0 border-top border-4 border-dorado">
+                        <div class="card-body">
+                            <span class="badge bg-granate mb-2">Proyección Social</span>
+                            <h4 class="card-title fw-bold">Demandas de Alimentos</h4>
+                            <p class="card-text text-muted">Jornada de asesoría jurídica gratuita.</p>
+                            <p class="mb-1"><i class="bi bi-calendar-event text-dorado me-2"></i> <strong>Fecha:</strong> 7 de Mayo, 2026</p>
+                            <a href="#" class="btn btn-outline-dark btn-sm mt-2">Ver Flyer</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100 shadow-sm border-0 border-top border-4 border-dorado">
+                        <div class="card-body">
+                            <span class="badge bg-secondary mb-2">Actividad Académica</span>
+                            <h4 class="card-title fw-bold">Inducción Estudiantil 2026-I</h4>
+                            <p class="card-text text-muted">Ceremonia oficial de bienvenida para ingresantes.</p>
+                            <p class="mb-1"><i class="bi bi-calendar-event text-dorado me-2"></i> <strong>Fecha:</strong> 7 de Abril, 2026</p>
+                            <a href="#" class="btn btn-outline-dark btn-sm mt-2">Más Información</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-granate text-white py-4 mt-auto">
+        <div class="container text-center">
+            <h5 class="text-dorado fw-bold mb-3">CLÍNICA JURÍDICA CUSCO</h5>
+            <p class="mb-1">© 2026 Todos los derechos reservados.</p>
+            <p class="small text-white-50">Universidad Nacional de San Antonio Abad del Cusco (UNSAAC)</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
