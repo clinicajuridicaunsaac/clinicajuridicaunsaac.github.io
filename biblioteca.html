@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Virtual - Clínica Jurídica Cusco</title>
+    <link rel="icon" href="logo.png" type="image/png">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <style>
+        :root {
+            --color-granate: #4b0102;
+            --color-dorado: #A9843F;
+            --color-dorado-oscuro: #b58f27;
+            --bg-claro: #f8f9fa;
+        }
+
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--bg-claro); }
+
+        /* Navegación */
+        .navbar-custom { background-color: var(--color-granate); }
+        .navbar-custom .navbar-brand, .navbar-custom .nav-link { color: white !important; font-weight: 500; }
+        .navbar-custom .nav-link:hover { color: var(--color-dorado) !important; transition: 0.3s; }
+
+        .section-title {
+            color: var(--color-granate);
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        /* Estilo de las tarjetas de materias */
+        .materia-card {
+            border-left: 5px solid var(--color-dorado) !important;
+            transition: transform 0.2s;
+        }
+        .materia-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1) !important;
+        }
+        
+        .btn-materia {
+            background-color: var(--color-granate);
+            color: white;
+            border: none;
+            transition: 0.3s;
+        }
+        .btn-materia:hover {
+            background-color: var(--color-dorado);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-custom sticky-top shadow">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="logo.png" alt="Logo CJC" height="60" class="me-2">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Volver al Inicio</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="container py-5 mt-4">
+        <div class="text-center mb-5">
+            <i class="bi bi-book-half mb-3" style="font-size: 4rem; color: var(--color-dorado);"></i>
+            <h1 class="section-title">Catálogo de Libros</h1>
+            <p class="text-muted lead mx-auto" style="max-width: 800px; text-align: justify;">
+                Clínica Jurídica Cusco-UNSAAC en su afán de facilitar a los estudiantes de Derecho y cualquier interesado, la búsqueda de libros de Derecho, le da la bienvenida a esta biblioteca virtual cual está debidamente organizada, donde el lector o lectora podrá leer y descargar libros de diversos autores y especialidades. ¡Disfrute de los libros que tenemos recopilados!
+            </p>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-9">
+                
+                <div class="card materia-card border-0 shadow-sm mb-3">
+                    <div class="card-body d-flex flex-column flex-md-row justify-content-between align-items-center p-4">
+                        <h5 class="fw-bold mb-3 mb-md-0" style="color: var(--color-granate);">
+                            <i class="bi bi-journal-text me-2 text-dorado"></i>Derecho Registral, Notarial y Urbanístico
+                        </h5>
+                        <a href="#" target="_blank" class="btn btn-materia px-4 py-2 rounded-pill">Ver Libros</a>
+                    </div>
+                </div>
+
+                <div class="card materia-card border-0 shadow-sm mb-3">
+                    <div class="card-body d-flex flex-column flex-md-row justify-content-between align-items-center p-4">
+                        <h5 class="fw-bold mb-3 mb-md-0" style="color: var(--color-granate);">
+                            <i class="bi bi-journal-text me-2 text-dorado"></i>Derecho Administrativo y Gestión Pública
+                        </h5>
+                        <a href="#" target="_blank" class="btn btn-materia px-4 py-2 rounded-pill">Ver Libros</a>
+                    </div>
+                </div>
+
+                <div class="card materia-card border-0 shadow-sm mb-3">
+                    <div class="card-body d-flex flex-column flex-md-row justify-content-between align-items-center p-4">
+                        <h5 class="fw-bold mb-3 mb-md-0" style="color: var(--color-granate);">
+                            <i class="bi bi-journal-text me-2 text-dorado"></i>Derecho Ambiental
+                        </h5>
+                        <a href="#" target="_blank" class="btn btn-materia px-4 py-2 rounded-pill">Ver Libros</a>
+                    </div>
+                </div>
+
+                <div class="card materia-card border-0 shadow-sm mb-3">
+                    <div class="card-body d-flex flex-column flex-md-row justify-content-between align-items-center p-4">
+                        <h5 class="fw-bold mb-3 mb-md-0" style="color: var(--color-granate);">
+                            <i class="bi bi-journal-text me-2 text-dorado"></i>Derecho Penal y Procesal Penal
+                        </h5>
+                        <a href="#" target="_blank" class="btn btn-materia px-4 py-2 rounded-pill">Ver Libros</a>
+                    </div>
+                </div>
+
+                <div class="card materia-card border-0 shadow-sm mb-3">
+                    <div class="card-body d-flex flex-column flex-md-row justify-content-between align-items-center p-4">
+                        <h5 class="fw-bold mb-3 mb-md-0" style="color: var(--color-granate);">
+                            <i class="bi bi-journal-text me-2 text-dorado"></i>Derecho Civil y Procesal Civil
+                        </h5>
+                        <a href="#" target="_blank" class="btn btn-materia px-4 py-2 rounded-pill">Ver Libros</a>
+                    </div>
+                </div>
+
+                <div class="card materia-card border-0 shadow-sm mb-3">
+                    <div class="card-body d-flex flex-column flex-md-row justify-content-between align-items-center p-4">
+                        <h5 class="fw-bold mb-3 mb-md-0" style="color: var(--color-granate);">
+                            <i class="bi bi-journal-text me-2 text-dorado"></i>Varios de Derecho y Miscelánea Jurídica
+                        </h5>
+                        <a href="#" target="_blank" class="btn btn-materia px-4 py-2 rounded-pill">Ver Libros</a>
+                    </div>
+                </div>
+
+                </div>
+        </div>
+        
+        <div class="text-center mt-5">
+            <a href="index.html" class="btn btn-outline-dark px-4 py-2" style="border-radius: 30px;">Volver a la página principal <i class="bi bi-house-door ms-2"></i></a>
+        </div>
+    </section>
+
+    <footer class="text-white py-5 mt-5" style="background-color: var(--color-granate);">
+        <div class="container text-center">
+            <p class="mb-1 fw-bold" style="color: var(--color-dorado);">© 2026 Clínica Jurídica Cusco UNSAAC</p>
+            <p class="small text-white-50 mb-0">Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
