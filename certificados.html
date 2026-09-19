@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificar Certificado - Clínica Jurídica Cusco</title>
+    <link rel="icon" href="logo.png" type="image/png">
+    
+    <!-- Bootstrap CSS y Iconos -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <style>
+        :root {
+            --color-granate: #4b0102;
+            --color-dorado: #A9843F;
+            --bg-claro: #f8f9fa;
+        }
+
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--bg-claro); }
+
+        /* Navegación */
+        .navbar-custom { background-color: var(--color-granate); }
+        .navbar-custom .navbar-brand, .navbar-custom .nav-link { color: white !important; font-weight: 500; }
+        .navbar-custom .nav-link:hover { color: var(--color-dorado) !important; transition: 0.3s; }
+
+        .section-title {
+            color: var(--color-granate);
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .btn-dinamico {
+            background-color: var(--color-granate);
+            color: white;
+            border: none;
+            transition: 0.3s;
+        }
+        
+        .btn-dinamico:hover {
+            background-color: var(--color-dorado);
+            color: white;
+        }
+    </style>
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+    <!-- Menú de Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-custom sticky-top shadow">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="logo.png" alt="Logo CJC" height="60" class="me-2">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Volver al Inicio</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección de Verificación -->
+    <section class="container text-center flex-grow-1 py-5 mt-4">
+        <i class="bi bi-patch-check-fill mb-3" style="font-size: 4rem; color: var(--color-dorado);"></i>
+        <h1 class="section-title mb-3">Verificación de Certificados</h1>
+        <p class="text-muted mx-auto mb-5" style="max-width: 600px;">
+            Ingrese el código alfanumérico ubicado en su certificado para validar su autenticidad.
+        </p>
+        
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="input-group input-group-lg shadow-sm border rounded">
+                    <!-- Campo de búsqueda -->
+                    <input type="text" id="codigoInput" class="form-control border-0" placeholder="Ej. CJCA72884942CADP1" style="text-transform: uppercase; outline: none; box-shadow: none;">
+                    <button class="btn btn-dinamico px-4" onclick="verificarCertificado()" style="border-radius: 0 5px 5px 0;">Validar</button>
+                </div>
+                
+                <!-- Aquí aparecerá el resultado -->
+                <div id="resultadoBusqueda" class="mt-4 text-start"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-white py-4 mt-auto" style="background-color: var(--color-granate);">
+        <div class="container text-center">
+            <p class="mb-1 fw-bold" style="color: var(--color-dorado);">© 2026 Clínica Jurídica Cusco UNSAAC</p>
+            <p class="small text-white-50 mb-0">Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Librerías JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+    
+    <!-- Lógica del Buscador -->
+    <script>
+        function verificarCertificado() {
+            const codigo = document.getElementById('codigoInput').value.trim().toUpperCase();
+            const resultadoDiv = document.getElementById('resultadoBusqueda');
+            
+            if(!codigo) {
+                resultadoDiv.innerHTML = '<div class="alert alert-warning text-center">Por favor, ingrese un código.</div>';
+                return;
+            }
+
+            resultadoDiv.innerHTML = '<div class="text-center text-muted"><div class="spinner-border spinner-border-sm me-2" role="status"></div> Buscando en la base de datos...</div>';
+
+            // RECUERDA: Reemplaza esto con tu enlace CSV de Google Sheets
+            const urlSheet = "PEGAR_AQUI_TU_ENLACE_CSV_DE_GOOGLE_SHEETS";
+
+            Papa.parse(urlSheet, {
+                download: true,
+                header: true,
+                complete: function(results) {
+                    const datos = results.data;
+                    const certificado = datos.find(row => row.Codigo && row.Codigo.trim().toUpperCase() === codigo);
+
+                    if(certificado) {
+                        resultadoDiv.innerHTML = `
+                            <div class="card border-0 shadow" style="border-top: 5px solid #198754 !important;">
+                                <div class="card-body p-4">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <i class="bi bi-check-circle-fill text-success fs-1 me-3"></i>
+                                        <div>
+                                            <h5 class="fw-bold mb-0 text-success">Certificado Auténtico</h5>
+                                            <small class="text-muted">Documento validado por la Clínica Jurídica Cusco</small>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <h5 class="fw-bold" style="color: var(--color-granate);">${certificado.Nombre}</h5>
+                                    <p class="mb-2"><strong style="color: var(--color-dorado);">Rol:</strong> ${certificado.Rol}</p>
+                                    <p class="mb-2"><strong style="color: var(--color-dorado);">Evento:</strong> ${certificado.Evento}</p>
+                                    <p class="mb-0"><strong style="color: var(--color-dorado);">Fecha:</strong> ${certificado.Fecha}</p>
+                                </div>
+                            </div>
+                        `;
+                    } else {
+                        resultadoDiv.innerHTML = `
+                            <div class="alert alert-danger d-flex align-items-center p-4 shadow-sm border-0" role="alert">
+                                <i class="bi bi-x-circle-fill fs-3 me-3"></i>
+                                <div>
+                                    <h6 class="fw-bold mb-0">Código no encontrado</h6>
+                                    <small>Verifique que el código esté bien escrito. Si el error persiste, comuníquese con nosotros.</small>
+                                </div>
+                            </div>`;
+                    }
+                },
+                error: function() {
+                    resultadoDiv.innerHTML = '<div class="alert alert-danger text-center">Error al conectar con la base de datos. (Falta el enlace de Google Sheets).</div>';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
